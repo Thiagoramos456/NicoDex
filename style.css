@@ -70,7 +70,8 @@ header ol a {
 .poke-type {
   align-self: flex-end;
   margin: 20px;
-  padding: 2px 5px;
+  padding: 2px 8px;
+  border-radius: 15px;
 }
 
 .normal {
