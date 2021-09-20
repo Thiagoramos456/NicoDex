@@ -20,6 +20,24 @@ tipo = pika.types.map(especificacoesDoTipo => especificacoesDoTipo.type.name)
 
 }
 
+const criaDivsDePokemon = ({ imagem, nome, tipo }) => {
+    const newDiv = document.createElement("section")
+    const img = document.createElement("img")
+    const nomeDoPok = document.createElement("h2")
+    const tipoDoPok = document.createElement("span")
+
+    newDiv.className = "poke"
+
+    img.src = imagem
+    img.className = "poke-sprite"
+    nomeDoPok.innerHTML = nome
+    nomeDoPok.className = "poke-name"
+    tipoDoPok = tipo
+    tipoDoPok.className = "poke-type"
+
+    newDiv.appendChild(img)
+    newDiv.appendChild
+}
 
 
 
