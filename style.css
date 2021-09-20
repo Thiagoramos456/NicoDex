@@ -74,7 +74,12 @@ header ol a {
   align-self: flex-end;
   margin: 20px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   padding: 2px 5px;
+=======
+  padding: 2px 8px;
+  border-radius: 15px;
+>>>>>>> 3c4a459... Mudando a border radius do tipo do pokemon
 }
 
 .normal {
