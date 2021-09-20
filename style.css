@@ -46,12 +46,15 @@ header ol a {
   border-radius: 20px;
   overflow: hidden;
   background-color: rgba(204, 204, 204, 0.459);
+<<<<<<< HEAD
   transition: 0.2s;
 }
 
 .poke:hover {
   transform: scale(1.1, 1.1);
   box-shadow: 2px 3px 5px gray;
+=======
+>>>>>>> 8fa6f29... Adicionando cor de background na ficha do pokemon
 }
 
 .poke-sprite {
@@ -63,9 +66,14 @@ header ol a {
   margin-top: 10px;
 }
 
+.poke-name {
+    margin-top: 10px;
+}
+
 .poke-type {
   align-self: flex-end;
   margin: 20px;
+<<<<<<< HEAD
   padding: 2px 5px;
 }
 
@@ -152,4 +160,6 @@ header ol a {
 .dragon {
 	background-color: #7038F8;
 	border: 1px solid #4924A1;
+=======
+>>>>>>> 8fa6f29... Adicionando cor de background na ficha do pokemon
 }
