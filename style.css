@@ -51,6 +51,7 @@ header ol a {
 
 .poke:hover {
   transform: scale(1.1, 1.1);
+  box-shadow: 2px 3px 5px gray;
 }
 
 .poke-sprite {
