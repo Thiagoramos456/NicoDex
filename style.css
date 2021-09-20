@@ -13,19 +13,19 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: black;
-  color:rgba(255, 255, 255, 0.952);
+  color: rgba(255, 255, 255, 0.952);
 }
 
 header .main-title {
-    margin: 10px 20px
+  margin: 10px 20px;
 }
 
 header ol {
-    margin: 20px
+  margin: 20px;
 }
 
 header ol a {
-    margin: 0 10px
+  margin: 0 10px;
 }
 
 .poke-list {
@@ -46,11 +46,20 @@ header ol a {
   border-radius: 20px;
   overflow: hidden;
   background-color: rgba(204, 204, 204, 0.459);
+  transition: 0.2s;
+}
+
+.poke:hover {
+  transform: scale(1.1, 1.1);
 }
 
 .poke-sprite {
   width: 200px;
-  background-color: rgb(248, 248, 248);
+  background-color: #f8f8f8;
+}
+
+.poke-name {
+  margin-top: 10px;
 }
 
 .poke-name {
