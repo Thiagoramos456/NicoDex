@@ -30,6 +30,8 @@ header ol a {
 
 .poke-list {
   display: flex;
+  width: 80%;
+  margin: 40px auto;
   flex-wrap: wrap;
   justify-content: center;
 }
