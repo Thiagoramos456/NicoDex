@@ -65,6 +65,7 @@ header ol a {
 
 .poke-name {
   margin-top: 10px;
+  text-transform: capitalize;
 }
 
 .poke-type {
