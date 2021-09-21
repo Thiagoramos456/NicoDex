@@ -1,8 +1,15 @@
 const fetchPokemon = async (pokemon) => {
-    const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    const teste  = await resposta.json()
-return teste
+    const apiDosPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    const respostaDaConversao  = await apiDosPokemon.json()    
+    criaDivsDePokemon(respostaDaConversao)
 };
+
+const funcaoCriaPok = () => {
+    for(let i = 0; i < 100; i += 1){
+    fetchPokemon(i)
+}
+}
+
 
 
 let nome = ""
@@ -20,30 +27,39 @@ tipo = pika.types.map(especificacoesDoTipo => especificacoesDoTipo.type.name)
 
 }
 
-const criaDivsDePokemon = ({ imagem, nome, tipo }) => {
-    const newDiv = document.createElement("section")
+const criaDivsDePokemon = ({ sprites: imagem, name: nome, types: tipo }) => {
+    console.log(tipo[0])
+
+    const listaDePokemon = document.querySelector(".poke-list")
+   
+    const divDoPokemon = document.createElement("section")
     const img = document.createElement("img")
     const nomeDoPok = document.createElement("h2")
     const tipoDoPok = document.createElement("span")
 
-    newDiv.className = "poke"
+    divDoPokemon.className = "poke"
 
-    img.src = imagem
+    img.src = imagem.front_default
     img.className = "poke-sprite"
     nomeDoPok.innerHTML = nome
     nomeDoPok.className = "poke-name"
-    tipoDoPok = tipo
+    tipoDoPok.innerHTML = tipo[0].type.name
     tipoDoPok.className = "poke-type"
+    tipoDoPok.classList.add(tipo[0].type.name)
 
-    newDiv.appendChild(img)
-    newDiv.appendChild
+    divDoPokemon.appendChild(img)
+    divDoPokemon.appendChild(nomeDoPok)
+    divDoPokemon.appendChild(tipoDoPok)
+
+    listaDePokemon.appendChild(divDoPokemon)
 }
 
 
 
 
+funcaoCriaPok()
 
-consoleAsyn(fetchPokemon('mewtwo'))
+
 
 
 // busca pokemon pelo tipo: https://pokeapi.co/api/v2/type/${tipo}
