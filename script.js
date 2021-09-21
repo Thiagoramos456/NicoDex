@@ -12,20 +12,9 @@ const funcaoCriaPok = async () => {
 
 
 
-let nome = ""
-let imagem = ""
-let tipo = []
 
 
-const consoleAsyn = async (funcao) => {
-    const pika = await funcao
-    
 
-imagem = pika.sprites.front_default
-nome = pika.name
-tipo = pika.types.map(especificacoesDoTipo => especificacoesDoTipo.type.name)
-
-}
 
 const criaDivsDePokemon = ({ sprites: imagem, name: nome, types: tipo }) => {
 
