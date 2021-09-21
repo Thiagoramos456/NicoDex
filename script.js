@@ -4,9 +4,9 @@ const fetchPokemon = async (pokemon) => {
     criaDivsDePokemon(respostaDaConversao)
 };
 
-const funcaoCriaPok = () => {
-    for(let i = 0; i < 100; i += 1){
-    fetchPokemon(i)
+const funcaoCriaPok = async () => {
+    for(let i = 1; i < 40; i += 1){
+    await fetchPokemon(i)
 }
 }
 
@@ -28,28 +28,37 @@ tipo = pika.types.map(especificacoesDoTipo => especificacoesDoTipo.type.name)
 }
 
 const criaDivsDePokemon = ({ sprites: imagem, name: nome, types: tipo }) => {
-    console.log(tipo[0])
 
     const listaDePokemon = document.querySelector(".poke-list")
-   
+   const divOfTypes = document.createElement("div")
     const divDoPokemon = document.createElement("section")
     const img = document.createElement("img")
     const nomeDoPok = document.createElement("h2")
-    const tipoDoPok = document.createElement("span")
-
+    
     divDoPokemon.className = "poke"
-
+    
     img.src = imagem.front_default
     img.className = "poke-sprite"
     nomeDoPok.innerHTML = nome
     nomeDoPok.className = "poke-name"
-    tipoDoPok.innerHTML = tipo[0].type.name
-    tipoDoPok.className = "poke-type"
-    tipoDoPok.classList.add(tipo[0].type.name)
+    
+    tipo.forEach(elemento => {
+        const tipoDoPok = document.createElement("span")
+        
+        tipoDoPok.className = "poke-type"
+        tipoDoPok.innerHTML = elemento.type.name
+        tipoDoPok.classList.add(elemento.type.name)
+
+        divOfTypes.appendChild(tipoDoPok)
+    })
+    
+    divOfTypes.className = "poke-types"
 
     divDoPokemon.appendChild(img)
     divDoPokemon.appendChild(nomeDoPok)
-    divDoPokemon.appendChild(tipoDoPok)
+    divDoPokemon.appendChild(divOfTypes)
+
+    
 
     listaDePokemon.appendChild(divDoPokemon)
 }
