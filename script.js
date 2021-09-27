@@ -1,4 +1,5 @@
 const fetchPokemon = async (pokemon) => {
+<<<<<<< HEAD
     const apiDosPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
     const respostaDaConversao  = await apiDosPokemon.json()    
     criaDivsDePokemon(respostaDaConversao)
@@ -11,6 +12,13 @@ const funcaoCriaPok = () => {
 }
 
 
+=======
+    const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    const teste  = await resposta.json()
+return teste
+};
+
+>>>>>>> 37ca27d... coco
 
 let nome = ""
 let imagem = ""
@@ -27,6 +35,7 @@ tipo = pika.types.map(especificacoesDoTipo => especificacoesDoTipo.type.name)
 
 }
 
+<<<<<<< HEAD
 const criaDivsDePokemon = ({ sprites: imagem, name: nome, types: tipo }) => {
     console.log(tipo[0])
 
@@ -60,6 +69,14 @@ const criaDivsDePokemon = ({ sprites: imagem, name: nome, types: tipo }) => {
 funcaoCriaPok()
 
 
+=======
+
+
+
+
+
+consoleAsyn(fetchPokemon('mewtwo'))
+>>>>>>> 37ca27d... coco
 
 
 // busca pokemon pelo tipo: https://pokeapi.co/api/v2/type/${tipo}
