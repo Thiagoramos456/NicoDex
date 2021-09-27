@@ -2,6 +2,7 @@ const fetchPokemon = async (pokemon) => {
     const apiDosPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
     const respostaDaConversao  = await apiDosPokemon.json()    
     criaDivsDePokemon(respostaDaConversao)
+    return respostaDaConversao
 };
 
 const funcaoCriaPok = async () => {
@@ -13,8 +14,12 @@ const funcaoCriaPok = async () => {
 
 
 
+const funcaoconsolelog = async () => {
+    const pikomon = await fetchPokemon('zapdos')
+    console.log(pikomon.sprites.other['official-artwork'].front_default)
+}
 
-
+funcaoconsolelog()
 
 const criaDivsDePokemon = ({ sprites: imagem, name: nome, types: tipo }) => {
 
@@ -26,7 +31,11 @@ const criaDivsDePokemon = ({ sprites: imagem, name: nome, types: tipo }) => {
     
     divDoPokemon.className = "poke"
     
-    img.src = imagem.front_default
+    const option1 = imagem.other['official-artwork'].front_default
+    const option2 = imagem.front_default
+    
+    
+    img.src = option2
     img.className = "poke-sprite"
     nomeDoPok.innerHTML = nome
     nomeDoPok.className = "poke-name"
